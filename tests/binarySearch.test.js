@@ -12,4 +12,14 @@ describe('binarySearch', () => {
       expect(index).toEqual(i);      
     }
   });
+
+  it('should return -1', () => {
+
+    for(let i = 0; i < digits.length; i++) {
+
+      const index = binarySearch(digits, i);
+
+      expect(index).toEqual(-1);      
+    }
+  });
 });
