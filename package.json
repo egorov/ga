@@ -1,0 +1,22 @@
+{
+  "name": "ga",
+  "version": "0.0.1",
+  "description": "Grokking algorithms with javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "node node_modules/jasmine/bin/jasmine --config=jasmine.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egorov/ga.git"
+  },
+  "author": "Sergey Egorov <me@egorov.space>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/egorov/ga/issues"
+  },
+  "homepage": "https://github.com/egorov/ga#readme",
+  "devDependencies": {
+    "jasmine": "^3.6.1"
+  }
+}
