@@ -46,8 +46,6 @@ function setValue(state) {
 
     if(state.indices.indexOf(index) !== -1) continue;
   
-    if(state.results.indexOf(state.values[index]) !== -1) continue;
-
     state.value = state.values[index];
     state.vIndex = index;
     break;
