@@ -1,20 +1,20 @@
-module.exports = function binarySearch(values, value) {
+module.exports = function getIndexOf(value, inArray) {
 
-  let first = 0;
-  let last = values.length - 1;
+  let startIndex = 0;
+  let endIndex = inArray.length - 1;
 
-  while(first <= last) {
+  while(startIndex <= endIndex) {
 
-    let index = Math.round((first + last) / 2);
-    let next = values[index];
+    let checkIndex = 
+      ((startIndex + endIndex) - (startIndex + endIndex) % 2) / 2;
 
-    if(next === value)
-      return index;
+    if(inArray[checkIndex] === value)
+      return checkIndex;
 
-    if(next > value)
-      last = index - 1;
+    if(inArray[checkIndex] > value)
+      endIndex = checkIndex - 1;
     else 
-      first = index + 1;
+      startIndex = checkIndex + 1;
   }
 
   return -1;
