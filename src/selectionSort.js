@@ -1,7 +1,6 @@
 module.exports = function selectionSort(values) {
 
   const state = {
-    iIndex: 0,
     indices: new Array(values.length),
     results: new Array(values.length),
     rIndex: 0,
@@ -32,10 +31,8 @@ function getSmallest(state) {
   }
 
   state.results[state.rIndex] = state.value;
+  state.indices[state.rIndex] = state.vIndex;
   state.rIndex += 1;
-
-  state.indices[state.iIndex] = state.vIndex;
-  state.iIndex += 1;
 }
 
 function setValue(state) {
