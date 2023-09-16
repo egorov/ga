@@ -32,6 +32,13 @@ function read(matrix, start_row, start_pos, width, height, result) {
     return;
   }
 
+  if(height === 1) {
+    for(let pos = start_pos; pos < start_pos + width; pos += 1) {
+      result.push(matrix[start_row][pos]);
+    }
+    return;
+  }
+
   let row = start_row;
   let end_pos = start_pos + width - 1;
 
