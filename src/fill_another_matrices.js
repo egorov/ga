@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function fill_matrices({ values, matrix_max_width, matrix_max_height }) {
+module.exports = function fill_another_matrices({ values, matrix_max_width, matrix_max_height }) {
 
   try {
 
@@ -19,19 +19,19 @@ module.exports = function fill_matrices({ values, matrix_max_width, matrix_max_h
     const matrices = [];
     let matrix = [];
     let row = make_array_with_null_values(matrix_max_width);
-    let matrix_width = 0;    
+    let row_index = 1;
 
     for(let value_index = 0; value_index < source.length; value_index += 1) {
 
-      row[matrix_width] = source[value_index];
+      if(row_index % matrix_max_width === 0) {
 
-      if(matrix_width + 1 === matrix_max_width) {
-        
+        row[0] = source[value_index];
+
         matrix.push(row);        
 
         row = make_array_with_null_values(matrix_max_width);
         
-        matrix_width = 0;
+        row_index = 1;
 
         if(matrix.length === matrix_max_height) {
           
@@ -41,7 +41,9 @@ module.exports = function fill_matrices({ values, matrix_max_width, matrix_max_h
         }
       }
       else {
-        matrix_width += 1;
+        row[row_index] = source[value_index];      
+
+        row_index += 1;
       }
     }
 
